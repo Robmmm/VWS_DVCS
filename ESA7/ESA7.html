@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="ext/gl-matrix.js"></script>
+		<script src="ESA7_vertexData_plane.js"></script>
+		<script src="ESA7_vertexData_planet.js"></script>
+		<script src="ESA7_vertexData_torus.js"></script>
+		<script src="ESA7_vertexData_cylinder.js"></script>
+		<script src="ESA7_vertexData_pillow.js"></script>
+		<script src="ESA7.js"></script>
+		<script type="x-shader/x-vertex" id="vertexshader">
+			precision mediump float;
+
+			attribute vec3 aPosition;
+			attribute vec3 aNormal;
+			
+			uniform mat4 uPMatrix;
+			uniform mat4 uMVMatrix;
+			uniform mat3 uNMatrix;
+			uniform vec4 uColor;
+			
+			varying vec4 vColor;
+			varying float displacement;
+			
+			void main(){
+
+
+				gl_Position = uPMatrix * uMVMatrix * vec4(aPosition, 1.0);
+
+				vec3 tNormal = uNMatrix * aNormal;
+
+				vColor = uColor;
+			}
+		</script>
+		<script type="x-shader/x-fragment" id="fragmentshader">
+			precision mediump float;
+			varying vec4 vColor;
+			varying float displacement;
+			
+			void main() {
+				vec4 newColor = vColor;
+
+			newColor = vec4(vec3(gl_FragCoord.z), 1.0);
+				gl_FragColor = newColor;
+
+			}
+		</script>
+	</head>
+	<body onload="app.start()">
+		<canvas id="canvas" width="1500" height="800" style="background-image: url('blue-universe2.jpg')"></canvas>
+		<br>
+		[A] - Rotate left hand side   <br>
+		[D] - Rotate right hand side  <br>
+		[W] - Birds View  <br>
+		[S] - Worms View  <br>
+		[V] - Zoom Out  <br>
+		[B] - Zoom In  <br>
+	Quelle: Background "blue Universe"  www.pexels.com
+	</body>
+</html>
