@@ -21,7 +21,7 @@ var app = ( function() {
 		up : [0, 1, 0],
 		// Opening angle given in radian.
 		// radian = degree*2*PI/360.
-		fovy : 80.0 * Math.PI / 180,
+		fovy : 110.0 * Math.PI / 180,
 		// Camera near plane dimensions:
 		// value for left right top bottom in projection.
 		lrtb : 2.0,
