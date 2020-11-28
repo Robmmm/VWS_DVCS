@@ -33,9 +33,9 @@ var app = ( function() {
 		projectionType : "perspective",
 		// Angle to Z-Axis for camera when orbiting the center
 		// given in radian.
-		zAngle : 0,
+		zAngle : 1,
 		// Distance in XZ-Plane from center when orbiting.
-		distance : 6,
+		distance : 7,
 	};
 
 	function start() {
