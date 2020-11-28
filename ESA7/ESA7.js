@@ -16,7 +16,7 @@ var app = ( function() {
 		// Initial position of the camera.
 		eye : [0, 1, 0],
 		// Point to look at.
-		center : [0, 2, 0],
+		center : [0, 2, 2],
 		// Roll and pitch of the camera.
 		up : [0, 1, 0],
 		// Opening angle given in radian.
