@@ -37,3 +37,5 @@ jobs:
 
       - name: Run Tests
         run: deno test -A --unstable
+        
+      - run: echo "mypath" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
