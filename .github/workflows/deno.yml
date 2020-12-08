@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        deno: ["v1.x", "nightly"]
+        deno: ["v1.2.6", "nightly"]
         os: [macOS-latest, windows-latest, ubuntu-latest]
 
     steps:
@@ -38,4 +38,4 @@ jobs:
       - name: Run Tests
         run: deno test -A --unstable
         
-      - run: echo "mypath" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
