@@ -78,6 +78,6 @@ buildscript {
 
 apply plugin: "io.freefair.aspectj.base"
 
-task other1 {
+task other2 {
         println "I'm not a default task! AspectJ Base Plugin for gradle is running too!"
 }
