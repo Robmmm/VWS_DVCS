@@ -64,3 +64,16 @@ apply plugin: "io.freefair.aspectj.post-compile-weaving"
 task other1 {
         println "I'm not a default task! AspectJ Plugin for gradle is running!"
 }
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.de:AspectjGradlePlugin:0.0.6"
+  }
+}
+
+apply plugin: "aspectj.AspectjGradlePlugin"
