@@ -58,7 +58,6 @@ buildscript {
   }
 }
 
-apply plugin: "io.freefair.aspectj"
 apply plugin: "io.freefair.aspectj.post-compile-weaving"
 
 
