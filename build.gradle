@@ -18,7 +18,7 @@ task encode {
 
 defaultTasks 'clean', 'run'
 
-task clean {
+task clean1 {
             println 'Default Cleaning!'
 }
 
