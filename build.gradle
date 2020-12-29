@@ -59,3 +59,7 @@ buildscript {
 }
 
 apply plugin: "io.freefair.aspectj.post-compile-weaving"
+
+task other1 {
+        println "I'm not a default task! AspectJ Plugin for gradle is running!"
+}
