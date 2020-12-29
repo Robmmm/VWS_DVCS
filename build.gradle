@@ -1,13 +1,5 @@
 import org.apache.commons.codec.binary.Base64
 
-
-
-plugins {
-    id 'java'
-}
-
-
-
 buildscript {
     repositories {
         mavenCentral()
@@ -54,4 +46,11 @@ gradle.taskGraph.whenReady { taskGraph ->
         version = '1.0-SNAPSHOT'
     }
 }
+
+
+
+plugins {
+    id 'java'
+}
+
 
