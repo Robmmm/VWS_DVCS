@@ -1,3 +1,66 @@
-apply plugins {
-  id "io.freefair.aspectj.post-compile-weaving" version "5.3.0"
+import org.apache.commons.codec.binary.Base64
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'commons-codec', name: 'commons-codec', version: '1.2'
+    }
+}
+task encode {
+            def byte[] encodedString = new Base64().encode('hello world\n'.getBytes())
+        println new String(encodedString)
+    
+}
+
+
+
+defaultTasks 'clean', 'run'
+
+task clean1 {
+            println 'Default Cleaning!'
+}
+
+task run {
+        println 'Default Running!'
+}
+
+task other {
+        println "I'm not a default task!"
+}
+
+task distribution {
+		println "We build the zip with version=$version"
+}
+
+task release {
+    dependsOn 'distribution'
+        println 'We release now'
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    if (taskGraph.hasTask(":release")) {
+        version = '1.0'
+    } else {
+        version = '1.0-SNAPSHOT'
+    }
+}
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "io.freefair.gradle:aspectj-plugin:5.3.0"
+  }
+}
+
+apply plugin: "io.freefair.aspectj.post-compile-weaving"
+
+
+task other1 {
+        println "I'm not a default task! AspectJ Plugin for gradle is running!"
 }
