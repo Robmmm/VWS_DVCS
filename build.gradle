@@ -7,16 +7,7 @@ task other1 {
         println "I'm not a default task! AspectJ Plugin for gradle is running!"
 }
 
-import org.apache.commons.codec.binary.Base64
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'commons-codec', name: 'commons-codec', version: '1.2'
-    }
-}
 task encode {
             def byte[] encodedString = new Base64().encode('hello world\n'.getBytes())
         println new String(encodedString)
@@ -54,4 +45,4 @@ gradle.taskGraph.whenReady { taskGraph ->
     } else {
         version = '1.0-SNAPSHOT'
     }
-}
+
