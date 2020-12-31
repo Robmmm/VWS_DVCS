@@ -45,4 +45,4 @@ gradle.taskGraph.whenReady { taskGraph ->
     } else {
         version = '1.0-SNAPSHOT'
     }
-
+}
