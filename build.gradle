@@ -11,7 +11,7 @@ plugins {
 group 'com.rob'
 version = '0.0.1-SNAPSHOT'
 
-sourceCompatibility = 2.8
+sourceCompatibility = 7.8
 
 repositories {
     jcenter()
