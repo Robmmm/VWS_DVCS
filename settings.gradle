@@ -1,1 +1,1 @@
-rootProject.name = 'io.freefair.aspectj.post-compile-weaving' & 'io.freefair.android.aspectj.transform'
+rootProject.name = 'io.freefair.aspectj.post-compile-weaving' || 'io.freefair.android.aspectj.transform'
