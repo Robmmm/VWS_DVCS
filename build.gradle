@@ -1,10 +1,11 @@
+import org.gradle.api.Plugin
+
 plugins {
   id "io.freefair.aspectj.post-compile-weaving" version "5.3.0"
     id 'groovy'
     id 'java-gradle-plugin'
     id 'maven-publish'
 }
-
 
 version = '0.0.1-SNAPSHOT'
 
@@ -19,16 +20,9 @@ dependencies {
 }
 
 
-
-
-
-
-
 task other1 {
         println "I'm not a default task! AspectJ Plugin for gradle is running!"
 }
-
-
 
 
 defaultTasks 'clean', 'run'
