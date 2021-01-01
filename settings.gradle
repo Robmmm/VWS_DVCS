@@ -1,2 +1,2 @@
 rootProject.name = 'io.freefair.aspectj.post-compile-weaving'
-
+rootProject.name = 'io.freefair.android.aspectj.transform'
