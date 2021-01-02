@@ -38,6 +38,10 @@ task other2 {
         println "I'm not a default task! Code DSL Plugin for gradle is running, FileDiff Test!"
 }
 
+task other3 {
+        println "I'm not a default task! Code DSL Plugin for gradle is running, FileDiff Test!"
+}
+
 defaultTasks 'clean', 'run'
 
 task clean1 {
