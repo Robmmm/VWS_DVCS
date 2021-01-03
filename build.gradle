@@ -1,23 +1,50 @@
-import org.apache.commons.codec.binary.Base64
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'commons-codec', name: 'commons-codec', version: '1.2'
-    }
-}
-task encode {
-            def byte[] encodedString = new Base64().encode('hello world\n'.getBytes())
-        println new String(encodedString)
-    
+plugins {
+  id 'io.freefair.aspectj.post-compile-weaving' version '5.3.0'
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+    id 'java'
+    id 'base'
+    id 'jacoco'
 }
 
+group 'com.rob'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    	testImplementation('org.spockframework:spock-core:1.3-groovy-2.5') {
+        exclude module: 'groovy-all'
+    }
+}
+
+gradlePlugin {
+    plugins {
+        fileDiff {
+            id = 'com.rob.file-diff'
+            implementationClass = 'com.rob.plugins.filediff.FileDiffPlugin'
+        }
+    }
+}
+
+task other1 {
+        println "I'm not a default task! AspectJ Plugin for gradle is running!"
+}
+
+task other2 {
+        println "I'm not a default task! Code DSL Plugin for gradle is running, FileDiff Test!"
+}
+
+task other3 {
+        println "I'm not a default task! Code DSL Plugin for gradle is running, FileDiff Test!"
+}
 
 defaultTasks 'clean', 'run'
 
-task clean {
+task clean1 {
             println 'Default Cleaning!'
 }
 
@@ -45,4 +72,3 @@ gradle.taskGraph.whenReady { taskGraph ->
         version = '1.0-SNAPSHOT'
     }
 }
-
